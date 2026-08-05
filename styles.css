@@ -331,6 +331,100 @@ h1 {
   color: var(--navy-800);
 }
 
+.notice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.notice-card {
+  padding: 24px;
+  border: 1px solid rgba(10, 74, 134, 0.14);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 14px 34px rgba(5, 38, 79, 0.08);
+}
+
+.notice-number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  height: 30px;
+  margin-bottom: 18px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: var(--navy-950);
+  background: var(--sky-100);
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.notice-card h3 {
+  margin: 0 0 12px;
+  color: var(--navy-950);
+  font-size: clamp(1.12rem, 1.8vw, 1.38rem);
+  line-height: 1.18;
+}
+
+.notice-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.notice-card p + p,
+.notice-card p + .notice-list,
+.notice-list + p {
+  margin-top: 10px;
+}
+
+.notice-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  list-style: none;
+}
+
+.notice-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.notice-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan-500);
+}
+
+.schedule-list li,
+.hot-spring-list li {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.hot-spring-list li {
+  grid-template-columns: 110px minmax(0, 1fr);
+}
+
+.notice-list span {
+  color: var(--navy-950);
+  font-weight: 780;
+}
+
+.notice-list a {
+  color: var(--navy-800);
+  font-weight: 720;
+  text-decoration-color: var(--cyan-500);
+  text-underline-offset: 4px;
+}
+
 #overview .section-heading {
   max-width: 1120px;
 }
@@ -797,6 +891,7 @@ h1 {
   .quick-info,
   .text-grid,
   .cards,
+  .notice-grid,
   .contact-row,
   .boarding-maps {
     grid-template-columns: 1fr;
@@ -860,8 +955,15 @@ h1 {
   }
 
   .card,
+  .notice-card,
   .schedule {
     padding: 22px;
+  }
+
+  .schedule-list li,
+  .hot-spring-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .program-schedule {
